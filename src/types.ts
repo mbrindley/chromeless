@@ -110,6 +110,9 @@ export type Command =
       type: 'returnHtml'
     }
   | {
+      type: 'returnHtmlUrl'
+    }
+  | {
       type: 'returnPdf'
       options?: PdfOptions
     }
