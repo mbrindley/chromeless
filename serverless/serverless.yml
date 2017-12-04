@@ -1,7 +1,7 @@
 service: chromeless-serverless
 
 custom:
-  stage: dev
+  stage: production
   debug: "*"
   awsIotHost: ${env:AWS_IOT_HOST}
   chrome:
@@ -12,7 +12,7 @@ provider:
   name: aws
   runtime: nodejs6.10
   stage: ${self:custom.stage}
-  region: eu-west-1
+  region: us-east-1
   environment:
     DEBUG: ${self:custom.debug}
     AWS_IOT_HOST: ${self:custom.awsIotHost}
@@ -118,7 +118,7 @@ resources:
             - - Ref: AWS::AccountId
               - "-"
               - Ref: AWS::Region
-              - -chromeless
+              - -brinchromeless
         LifecycleConfiguration:
           Rules:
           - ExpirationInDays: 1

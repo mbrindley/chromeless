@@ -9,6 +9,7 @@ import {
   PdfOptions,
   DeviceMetrics,
   ScreenshotOptions,
+  HtmlUrlOptions,
 } from './types'
 import { getDebugOption } from './util'
 import { isArray } from 'util'

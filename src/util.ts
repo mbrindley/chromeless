@@ -601,6 +601,9 @@ const s3ContentTypes = {
   'application/pdf': {
     extension: 'pdf'
   },
+  'text/html': {
+      extension: 'html'
+  },
 }
 
 export async function uploadToS3(data: string, contentType: string): Promise<string> {

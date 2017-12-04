@@ -111,6 +111,7 @@ export type Command =
     }
   | {
       type: 'returnHtmlUrl'
+      options?: HtmlUrlOptions
     }
   | {
       type: 'returnPdf'
@@ -229,6 +230,10 @@ export interface PdfOptions {
 }
 
 export interface ScreenshotOptions {
+  filePath?: string
+}
+
+export interface HtmlUrlOptions {
   filePath?: string
 }
 
