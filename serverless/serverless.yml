@@ -38,7 +38,7 @@ provider:
             - Ref: AWS::AccountId
             - "-"
             - Ref: AWS::Region
-            - -chromeless
+            - -brinchromeless
             - /*
 
 plugins:
@@ -61,7 +61,7 @@ functions:
           - - Ref: AWS::AccountId
             - "-"
             - Ref: AWS::Region
-            - -chromeless
+            - -brinchromeless
       CHROMELESS_S3_OBJECT_KEY_PREFIX: ""
       CHROMELESS_S3_BUCKET_URL:
         Fn::GetAtt:

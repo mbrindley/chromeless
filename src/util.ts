@@ -596,13 +596,16 @@ export function isS3Configured() {
 
 const s3ContentTypes = {
   'image/png': {
-    extension: 'png'
+    extension: 'png',
+    bodyEncoding: 'base64'
   },
   'application/pdf': {
-    extension: 'pdf'
+    extension: 'pdf',
+    bodyEncoding: 'base64'
   },
   'text/html': {
-      extension: 'html'
+      extension: 'html',
+      bodyEncoding: 'utf8'
   },
 }
 
@@ -619,7 +622,7 @@ export async function uploadToS3(data: string, contentType: string): Promise<str
           Key: s3Path,
           ContentType: contentType,
           ACL: 'public-read',
-          Body: Buffer.from(data, 'base64'),
+          Body: Buffer.from(data, s3ContentType.bodyEncoding),
         })
         .promise()
 
